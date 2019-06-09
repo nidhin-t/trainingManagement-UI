@@ -1,3 +1,33 @@
-<p>
-  courses works!
-</p>
+<div class="container">
+  <h2>Courses List</h2>
+
+  <table class="table-responsive">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Duration</th>
+        <th>Active</th>
+        <th>Trainers</th>
+        <th>Data for Next Batch</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let c of coursesList">
+
+        <td> {{c.name}} </td>
+        <td> {{ c.description }} </td>
+        <td> {{ c.duration }} </td>
+        <td> {{ c.active }} </td>
+        <td> {{ c.trainers }} </td>
+        <td> {{ c.createdDate }} </td>
+        <td> <button (click)="callEdit(c._id)">Edit</button> </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
-import { CoursesList } from '../courses-list';
+import { CoursesList,Data } from '../courses-list';
 
 @Component({
   selector: 'app-courses',
@@ -9,22 +9,25 @@ import { CoursesList } from '../courses-list';
 })
 export class CoursesComponent implements OnInit {
 
-  coursesList: CoursesList;
+  coursesMeta: CoursesList;
+  coursesList: Data[];
   constructor(private callHttp: HttpService) {
-    console.log("Loads component till here");
 
   }
 
-  
+
   ngOnInit() {
-    // this.callHttp.getCoursesData().subscribe(res => {
+    this.callHttp.getCoursesData().subscribe(res => {
+      if (res.isValid) {
+        this.coursesMeta = res;
+        this.coursesList = this.coursesMeta.data
+        console.log(this.coursesMeta.data)
+      }
+    })
+  }
 
-    //     this.coursesList = res;
-    //     console.log(res)
-
-    // })
-    // this.coursesList = this.callHttp.getCoursesData()
-    // console.log(this.callHttp.getCoursesData())
+  callEdit(id:any){
+    console.log("ID captured:",id)
   }
 
 }

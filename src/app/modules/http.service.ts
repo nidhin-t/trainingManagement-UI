@@ -22,7 +22,7 @@ export class HttpService {
 
   getCoursesData() {
     console.log("get is working")
-    let url = "localhost:3000/training-course/getall"
+    let url = "http://localhost:3000/training-course/getall"
     return this.httpClient.get<CoursesList>(url,{headers:this.headers})
   }
 
