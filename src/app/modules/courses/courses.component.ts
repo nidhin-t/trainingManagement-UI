@@ -9,12 +9,13 @@ import { CoursesList } from '../courses-list';
 })
 export class CoursesComponent implements OnInit {
 
-  coursesList: CoursesList
-
+  coursesList: CoursesList;
   constructor(private callHttp: HttpService) {
+    console.log("Loads component till here");
 
   }
 
+  
   ngOnInit() {
     // this.callHttp.getCoursesData().subscribe(res => {
 
