@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { CoursesList } from './courses-list';
+import { CoursesList,Data } from './courses-list';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +8,6 @@ import { CoursesList } from './courses-list';
 export class HttpService {
 
   headers: any;
-
-  configFile = {
-    postUrl: "localhost:3000/training-course/create"
-  }
-
-
 
 
   constructor(private httpClient: HttpClient) {
@@ -25,5 +19,12 @@ export class HttpService {
     let url = "http://localhost:3000/training-course/getall"
     return this.httpClient.get<CoursesList>(url,{headers:this.headers})
   }
+
+  setCourseData(CoursesList:Data) {
+    let url = "http://localhost:3000/training-course/create"
+    return this.httpClient.post(url,CoursesList,{headers:this.headers})
+  }
+
+
 
 }

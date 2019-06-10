@@ -1,0 +1,65 @@
+<section class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+          <fieldset>
+            <legend>Course Edit:leave blank if no need to</legend>
+            <div class="form-group row">
+              <div class="col-md-8">
+                <label for="firstName">Name</label>
+                <input type="text" class="form-control" id="firstName" name="name" ngModel #name="ngModel" placeholder={{this.editcoureList.name}}>
+              </div>
+
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label for="firstName">Duration</label>
+                <input type="text" class="form-control" id="firstName" placeholder={{this.editcoureList.duration}}>
+              </div>
+              <div class="col-md-6">
+                <label for="firstName">Price </label>
+                <input type="text" class="form-control" id="firstName" placeholder={{this.editcoureList.price}}>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="firstName">Description:</label>
+              <textarea class="form-control" id="firstName" placeholder={{this.editcoureList.description}}></textarea>
+            </div>
+            <div class="form-group">
+              <label for="firstName">Trainers</label>
+              <textarea class="form-control" id="firstName" placeholder={{this.editcoureList.trainers}}></textarea>
+            </div>
+            <div class="form-group">
+              <label for="firstName">Active</label>
+              <input type="text" class="form-control" id="firstName" placeholder={{this.editcoureList.active}}>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label for="firstName">Created Date</label>
+                <input type="text" class="form-control" id="firstName" placeholder={{this.editcoureList.createdDate}}>
+              </div>
+
+            </div>
+            <div class="checkbox">
+              <label>
+                <input [checked]="this.editcoureList.active" type="checkbox">
+                Is Active
+              </label>
+            </div>
+            <button (click)="onSubmit()" class="btn btn-default">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="navbar navbar-inverse navbar-fixed-bottom">
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-calendar"></span></a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-comment"></span></a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+  </ul>
+</footer>

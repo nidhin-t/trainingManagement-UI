@@ -1,0 +1,62 @@
+<section class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <fieldset>
+              <legend>Course Edit:</legend>
+              <div class="form-group row">
+                <div class="col-md-8">
+                  <label for="firstName">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" ngModel #name="ngModel" placeholder="Name" required>
+                </div>
+  
+              </div>
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="firstName">Duration</label>
+                  <input type="text" class="form-control" id="duration" name="duration" ngModel #duration="ngModel" placeholder="Duration">
+                </div>
+                <div class="col-md-6">
+                  <label for="firstName">Price </label>
+                  <input type="text" class="form-control" id="price" name="price" ngModel #price="ngModel" placeholder="Price">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="firstName">Description:</label>
+                <textarea class="form-control" id="description" name="description" ngModel #description="ngModel" placeholder="Description"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="firstName">Trainers</label>
+                <textarea class="form-control" id="trainers" name="trainers" ngModel #trainers="ngModel" placeholder="Enter Trainer ID(Will fix it later)"></textarea>
+              </div>
+              
+              <div class="form-group row">
+                <div class="col-md-6">
+                  <label for="firstName">Created Date</label>
+                  <input type="date" class="form-control" name="createdDate" ngModel #createdDate="ngModel" id="firstName" placeholder="Created Date">
+                </div>
+  
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="active" ngModel #active="ngModel">
+                  Is Active?
+                </label>
+              </div>
+              <button (click)="onSubmit()" class="btn btn-secondary">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="navbar navbar-inverse navbar-fixed-bottom">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-calendar"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-comment"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+    </ul>
+  </footer>

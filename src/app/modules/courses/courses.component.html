@@ -23,11 +23,13 @@
         <td> {{ c.active }} </td>
         <td> {{ c.trainers }} </td>
         <td> {{ c.createdDate }} </td>
-        <td> <button (click)="callEdit(c._id)">Edit</button> </td>
+        <td> <button (click)="callEditComponent(c)">Edit</button> </td>
 
       </tr>
     </tbody>
 
   </table>
-
+  <div class="col-md-4" style="margin-top: 5rem">
+<button (click)="onCreate()">Create Course</button>
+</div>
 </div>
